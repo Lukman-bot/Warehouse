@@ -13,7 +13,7 @@ const breadcrumbs: BreadcrumbItem[] = [
 ];
 
 export default function FreightSetting() {
-    const { freight_setting } = usePage<{ freight_setting: {
+    const { freight_setting = [] } = usePage<{ freight_setting?: {
         id: number;
         carrier: string;
         depature_city: string;
@@ -21,7 +21,7 @@ export default function FreightSetting() {
         creator: string;
         created_at: string;
         valid: string;
-    }[]}>().props;
+    }[] }>().props;
 
     const [ isModalOpen, setIsModalOpen ] = useState(false);
     const [ selectedFreightSetting, setSelectedFreightSetting ] = useState(null);
